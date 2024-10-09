@@ -34,7 +34,7 @@
             <p class="text-gray-400 text-sm">
                 Don't have an account? 
                 <a href="/register" class=" hover:underline">
-                    Sign in
+                    Sign up
                 </a>
             </p>
         </div>
