@@ -87,5 +87,5 @@ Route::get('auth/google/callback', function () {
         Auth::login($newUser);
     }
 
-    return redirect('/dashboard');  // Redirect the user after login
+    return redirect('/customer');  // Redirect the user after login
 });
