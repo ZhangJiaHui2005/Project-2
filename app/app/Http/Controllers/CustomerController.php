@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class CustomerController extends Controller
 {
     public function index() {
-        return view("customers.index");
+        $products = Product::paginate(15);
+
+        return view("customers.index", compact("products"));
     }
 
     public function about() {
@@ -15,7 +18,9 @@ class CustomerController extends Controller
     }
 
     public function furnitures() {
-        return view('customers.furniture');
+        $products = Product::paginate(15);
+
+        return view('customers.furniture', compact('products'));
     }
 
     public function blog() {
