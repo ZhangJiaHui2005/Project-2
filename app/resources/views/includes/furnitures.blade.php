@@ -32,7 +32,10 @@
               </div>
             </div>
         @endforeach
-        {{$products->links('pagination::bootstrap-5')}}
+        
+        <div class="mt-5">
+          {{$products->links('pagination::bootstrap-5')}}
+        </div>
       </div>
     </div>
   </section>
