@@ -13,18 +13,18 @@
             <div class="col-md-6 col-lg-4">
               <div class="box">
                 <div class="img-box">
-                  <img src="{{asset($product->image)}}}}" alt="{{$product->name}}">
+                  <img src="{{asset($product->image)}}}}" alt="{{$product->name->name}}">
                 </div>
 
                 <div class="detail-box">
                   <h5>
-                    {{$product->name}}
+                    {{$product->name->name}}
                   </h5>
                   <div class="price_box">
                     <h6 class="price_heading">
                       <span>$</span> {{$product->price}}
                     </h6>
-                    <a href="" class="btn">
+                    <a href="{{route('customers.product_details', $product->id)}}" class="btn">
                       View More
                     </a>
                   </div>

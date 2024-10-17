@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  @include('includes.head');
+  @include('includes.head')
 
 </head>
 
@@ -10,7 +10,7 @@
 
   <div class="hero_area">
     <!-- header section strats -->
-    @include('includes.header');
+    @include('includes.header')
     <!-- end header section -->
   </div>
 

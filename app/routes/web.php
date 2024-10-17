@@ -28,22 +28,25 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::get('/furniture', [CustomerController::class, 'furnitures'])->name('customers.furniture');
         Route::get('/blog', [CustomerController::class, 'blog'])->name('customers.blog');
         Route::get('/contact', [CustomerController::class, 'contact'])->name('customers.contact');
+        Route::get('/product/{product}', [CustomerController::class, 'product_details'])->name('customers.product_details');
+        Route::post('/product-comment/{product}', [CustomerController::class, 'product_comment'])->name('customers.product_comment');
+        Route::get('/delete-comment/{comment}', [CustomerController::class, 'delete_comment'])->name('customers.delete_comment');
     });
 });
 
 Route::get('/email/verify', function () {
     return view('auth.verify-email');
 })->middleware('auth')->name('verification.notice');
- 
+
 Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
     $request->fulfill();
- 
+
     return redirect('/home');
 })->middleware(['auth', 'signed'])->name('verification.verify');
- 
+
 Route::post('/email/verification-notification', function (Request $request) {
     $request->user()->sendEmailVerificationNotification();
- 
+
     return back()->with('message', 'Verification link sent!');
 })->middleware(['auth', 'throttle:6,1'])->name('verification.send');
 

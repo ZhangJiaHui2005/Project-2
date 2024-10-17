@@ -30,18 +30,18 @@ class Product extends Model
 
     protected $table = 'products';
 
-    // public function languages(){
-    //     return $this->belongsToMany(Language::class, 'product_language' , 'product_id', 'language_id')
-    //     ->withPivot(
-    //         'name',
-    //         'canonical',
-    //         'meta_title',
-    //         'meta_keyword',
-    //         'meta_description',
-    //         'description',
-    //         'content'
-    //     )->withTimestamps();
-    // }
+//     public function languages(){
+//         return $this->belongsToMany(Language::class, 'product_language' , 'product_id', 'language_id')
+//         ->withPivot(
+//             'name',
+//             'canonical',
+//             'meta_title',
+//             'meta_keyword',
+//             'meta_description',
+//             'description',
+//             'content'
+//         )->withTimestamps();
+//     }
     // public function product_catalogues(){
     //     return $this->belongsToMany(ProductCatalogue::class, 'product_catalogue_product' , 'product_id', 'product_catalogue_id');
     // }
@@ -49,4 +49,14 @@ class Product extends Model
     // public function product_variants(){
     //     return $this->hasMany(ProductVariant::class, 'product_id','id');
     // }
+
+    public function name(): \Illuminate\Database\Eloquent\Relations\HasOne
+    {
+        return $this->hasOne(ProductLanguage::class, 'product_id', 'id');
+    }
+
+    public function comment(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Comment::class, 'product_id', 'id');
+    }
 }
