@@ -18,9 +18,9 @@
     <body class="font-sans text-gray-900 antialiased">
         <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100 dark:bg-gray-900">
             <div>
-                <a href="/">
+                <a href="/" class="flex justify-center items-center">
                     {{-- <x-application-logo class="w-20 h-20 fill-current text-gray-500" /> --}}
-                    <h1 class=" text-black rounded-md text-2xl font-bold px-20 py-6 bg-white">Ak rong xanh's electronics</h1>
+                    <img src="{{asset('images/logo_project.jpg')}}" alt="Logo" class="w-3/4">
                 </a>
             </div>
 
